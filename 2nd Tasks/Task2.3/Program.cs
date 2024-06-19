@@ -1,6 +1,13 @@
 ﻿bool Polindrom(int num)
 {
-    return num.ToString().Reverse().ToArray().SequenceEqual(num.ToString().ToArray());
+    int cnt =1000, ans = 0 , temp = num;
+    while (temp > 0)
+    {
+        ans += (temp % 10) * cnt;
+        cnt /= 10;
+        temp /= 10;
+    }
+    return num == ans;
 }
 
 int num;
